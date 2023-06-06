@@ -128,6 +128,7 @@
 		width: 100%;
 		height: 100%;
 		background-image: linear-gradient( rgba(0, 0, 0, 0), var(--main-bg-alt));
+		-webkit-backdrop-filter: blur(12px);
 		backdrop-filter: blur(12px);
 		content: '';
 		z-index: -1;
