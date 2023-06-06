@@ -1,0 +1,99 @@
+:root {
+	--hlt-bdr-w: 10px; /* { min: 1, max: 20, step: 1, friendly: 'Highlight Border Width', group: 'Calculations' } */
+}
+
+/* Text Highlights */
+.cnt-stl .txt-hlt:not(:first-child) {
+	margin-top: var(--sp-vm-clc);
+}
+
+.cnt-stl .txt-hlt:not(:last-child) {
+	margin-bottom: var(--sp-vm-clc);
+}
+
+.cnt-stl .txt-hlt.bdr_lt{
+	border-left-width: var(--hlt-bdr-w);
+}
+
+.cnt-stl .txt-hlt.bdr_tp{
+	border-top-width: var(--hlt-bdr-w);
+}
+
+.cnt-stl .txt-hlt.bdr_bt {
+	border-bottom-width: var(--hlt-bdr-w);
+}
+
+.cnt-stl ul {
+    list-style-type: none;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.cnt-stl ol {
+    list-style-type: decimal;
+    margin: 1em 0;
+    padding: 0 0 0 1.5em;
+}
+
+.cnt-stl ol ol, 
+.cnt-stl ul ul {
+    margin-top: .25em;
+    margin-bottom: 0;
+}
+
+.cnt-stl ul li {
+    position: relative;
+    padding: .1em 0 .1em 1.5em;
+}
+
+.cnt-stl :is(ul,ol):not(.spl-lst) li + li {
+    margin-top: .3em;
+}
+
+.cnt-stl .spl-lst li {
+    margin-top: .5em;
+}
+
+.cnt-stl ul li::before {
+    content: '';
+    position: absolute;
+    top: .55rem;
+    left: 0;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background-color: var(--buttons);
+}
+
+.cnt-stl ol li {
+    position: relative;
+    padding: .1em 0;
+}
+
+.cnt-stl ol:not(.spl-lst) li + li {
+    margin-top: 0.3em;
+}
+
+/* Fix a content bug */
+.cms-content .bnr if[p-hide="true"]:not([field*="Button"]) {
+    display: none;
+}
+
+.cms-content app-component[p-visible="false"] {
+    display: none;
+}
+		
+/* 1025px Responsive (min-width) */
+@media screen and (min-width:1025px) {
+	
+	.cnt-stl .spl-lst > ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	
+	.cnt-stl .spl-lst li {
+		width: 47%;
+	}
+	
+}

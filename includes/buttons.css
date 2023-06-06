@@ -1,0 +1,134 @@
+:root {
+    --btn-trn-sp: 0.3s; /* { min: 0, max: 1, step: 0.05, friendly: 'Transition Speed' } */
+    --btn-trn-tf: ease; /* { friendly: 'Transition Timing Function' } */
+  
+    --btn-v1-pd-t: .83rem; /* { min: 0.5, max: 2, step: 0.1, friendly: 'Button V1 Top Padding'  } */
+    --btn-v1-pd-b: .778rem; /* { min: 0.5, max: 2, step: 0.1, friendly: 'Button V1 Bottom Padding'  } */
+    --btn-v1-pd-l: 1.38rem; /* { min: 0.5, max: 2, step: 0.1, friendly: 'Button V1 Left Padding'  } */
+    --btn-v1-pd-r: 1.38rem; /* { min: 0.5, max: 2, step: 0.1, friendly: 'Button V1 Right Padding'  } */
+  
+  }
+  
+  .btn {
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Btn V1 */
+  .btn.v1 {
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--btn-v1-pd-t) var(--btn-v1-pd-r) var(--btn-v1-pd-b) var(--btn-v1-pd-l);
+    transition: background-color var(--btn-trn-sp) var(--btn-trn-tf) 0s, color var(--btn-trn-sp) var(--btn-trn-tf) 0s;
+    border: 1px solid;
+  }
+
+  .btn.v1::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--buttons);
+    transition: transform var(--btn-trn-sp) var(--btn-trn-tf) 0s;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    content: '';
+    z-index: -1;
+  }
+  
+  .btn-stl {
+    padding: var(--btn-v1-pd-t) var(--btn-v1-pd-r) var(--btn-v1-pd-b) var(--btn-v1-pd-l);
+  }
+  
+  body .lt-bg .btn.v1 {
+    color: var(--text);
+    background-color: transparent;
+    border-color: var(--buttons);
+  }
+
+  body .dk-bg .btn.v1 {
+    color: var(--text-alt);
+    background-color: transparent;
+    border-color: var(--buttons);
+  }
+  
+  body .bg-bx.alt-bg .btn.v1 {
+      color: var(--text);
+      background-color: transparent;
+  }
+  
+  body .lt-bg .btn.v1.alt{
+    color: var(--text);
+    background-color: transparent;
+  }
+  
+  body .dk-bg .btn.v1.alt {
+    color: var(--text-alt);
+    background-color: transparent;
+  }
+
+  .btn.v1 svg {
+    font-size: .778rem;
+  }
+
+  .btn.v2 svg {
+    font-size: .67rem;
+  }
+  
+  /* Btn V2 */
+  .btn.v2 {
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    transition: color var(--btn-trn-sp) var(--btn-trn-tf) 0s;
+  }
+
+  .lt-bg .bg-bx.alt-bg .btn.v2,
+  .dk-bg .bg-bx.alt-bg .btn.v2,
+  .lt-bg .bg-bx.ulk-bg .btn.v2,
+  .dk-bg .bg-bx.lk-bg .btn.v2 {
+    color: var(--text-alt);
+  }
+
+  .lt-bg .bg-bx.lk-bg .btn.v2,
+  .dk-bg .bg-bx.ulk-bg .btn.v2 {
+	  color: var(--text);
+  }
+  
+  /* 1025px Responsive (min-width) */
+  @media screen and (min-width: 1025px) {
+
+    .btn.v1:hover::before, .btn.v1:focus::before, a:hover .btn.v1::before, a:focus .btn.v1::before {
+      transform: scaleX(1);
+    }
+    
+    .lt-bg :is(.btn.v1:is(:hover, :focus), a:is(:hover, :focus) .btn.v1),
+    .dk-bg .bg-bx.ulk-bg :is(.btn.v1:is(:hover, :focus), a:is(:hover, :focus) .btn.v1),
+    body .bg-bx.alt-bg :is(.btn.v1:is(:hover, :focus), a:is(:hover, :focus) .btn.v1) {
+      color: var(--text-alt);
+    }
+  
+    .dk-bg :is(.btn.v1:is(:hover, :focus), a:is(:hover, :focus) .btn.v1),
+    .lt-bg .bg-bx.ulk-bg :is(.btn.v1:is(:hover, :focus), a:is(:hover, :focus) .btn.v1) {
+      color: var(--text-alt);
+    }
+    
+    .lt-bg :is(.btn.v1.alt:is(:hover, :focus), a:is(:hover, :focus) .btn.v1.alt),
+    .lt-bg .bg-bx.ulk-bg :is(.btn.v1.alt:is(:hover, :focus), a:is(:hover, :focus) .btn.v1.alt),
+    .dk-bg :is(.btn.v1.alt:is(:hover, :focus), a:is(:hover, :focus) .btn.v1.alt),
+    .dk-bg .bg-bx.ulk-bg :is(.btn.v1.alt:is(:hover, :focus), a:is(:hover, :focus) .btn.v1.alt) {
+      color: var(--text-alt);
+    }
+    
+    .lt-bg .btn-clr-hvr :is(.btn:is(.v1, .v1.alt):is(:hover, :focus), a:is(:hover, :focus) .btn:is(.v1, .v1.alt)),
+    .dk-bg .btn-clr-hvr :is(.btn:is(.v1, .v1.alt):is(:hover, :focus), a:is(:hover, :focus) .btn:is(.v1, .v1.alt)) {
+      color: var(--text-alt);
+      background-color: var(--inner-bg-alt);
+    }
+    
+  }

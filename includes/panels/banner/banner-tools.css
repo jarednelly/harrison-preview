@@ -1,0 +1,14 @@
+.bnr {
+    --bnr-pd-v-tp: 75;
+	--bnr-pd-v-tp-mbl: 409;
+
+    --bnr-pd-v-tp-clc: calc((var(--bnr-pd-v-tp-mbl) * 1px) + (var(--bnr-pd-v-tp) - var(--bnr-pd-v-tp-mbl)) * ((100vw - 320px) / (1920 - 320)));
+}
+
+@media screen and (max-width:699px) {
+    [class*="bnr"].pd_v:not(.full-mbl) {
+        padding-top: var(--bnr-pd-v-tp-clc);
+    }
+     
+}
+

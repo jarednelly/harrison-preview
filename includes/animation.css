@@ -1,0 +1,299 @@
+:root{
+	--anm-trn-sp: 1s; /* { min: 0, max: 1, step: 0.05, friendly: 'Animation Transition Speed', group: 'Animations' } */
+	--anm-trn-tf: ease; /* { friendly: 'Animation Transition Timing Function', group: 'Animations' } */		
+	--anm-trn-dly: 0s; /* { min: 0, max: 1, step: 0.05, friendly: 'Animation Start Delay', group: 'Animations' } */
+	--anm-trn-seq-dly: 0.2s; /* { min: 0, max: 1, step: 0.05, friendly: 'Delay for Sequential Animations', group: 'Animations' } */
+	--anm-trn-lst-dly: 0.1s; /* { min: 0, max: 1, step: 0.05, friendly: 'Delay for List Animations', group: 'Animations' } */
+}
+
+@media screen and (min-width:1025px) {
+    .anm_seq-itm > *,
+    .anm_hlf-l,
+	.anm_hlf-r,
+    .anm_fl,
+    .anm_seq-lst > li {
+        opacity: 0;
+		transition: opacity var(--anm-trn-sp) var(--anm-trn-tf) var(--anm-trn-dly), transform var(--anm-trn-sp) var(--anm-trn-tf) var(--anm-trn-dly);
+    }
+
+    .anm_fl,
+    .anm_seq-itm > *,
+    .anm_seq-lst > li {
+		transform: translateY(2rem);
+	}
+
+    .anm_hlf-l,
+	.anm_seq-itm-sp > *,
+	.f_rev > .anm_hlf-r {
+		transform: translateX(-2rem);
+	}
+	
+	.anm_hlf-r,
+	.f_rev > .anm_hlf-l {
+		transform: translateX(2rem);
+	}
+
+    [class*="anm_bfr"] {
+        transition: transform var(--anm-trn-sp) var(--anm-trn-tf) var(--anm-trn-dly);
+    }
+
+    .anm_bfr-lt {
+        transform: scaleX(0);
+        transform-origin: 0 0;
+    }
+
+    .anm_bfr-rt {
+        transform: scaleX(0);
+        transform-origin: 100% 0;
+    }
+
+    .anm_bfr-tp {
+        transform: scaleY(0);
+        transform-origin: 0 0;
+    }
+
+    .anm_bfr-bt {
+        transform: scaleY(0);
+        transform-origin: 0 100%;
+    }
+
+    [class*="anm_bfr"]::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--buttons);
+        content: '';
+        z-index: 2;
+        transition: transform var(--anm-trn-sp) var(--anm-trn-tf) var(--anm-trn-dly);
+    }
+
+    .anm_bfr-lt::before {
+        transform: scaleX(1);
+        transform-origin: 100% 0;
+    }
+
+    .anm_bfr-rt::before {
+        transform: scaleX(1);
+        transform-origin: 0 0;
+    }
+
+    .anm_bfr-tp::before {
+        transform: scaleY(1);
+        transform-origin: 0 100%;
+    }
+
+    .anm_bfr-bt::before {
+        transform: scaleX(1);
+        transform-origin: 0 0;
+    }
+
+    [class*="anm_bfr"] {
+        transition-delay: calc(var(--anm-trn-dly) + var(--anm-trn-seq-dly));
+    }
+
+    [class*="anm_bfr"] + [class*="anm_bfr"] {
+        transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-seq-dly) * 2));
+    }
+
+    [class*="anm_bfr"] + [class*="anm_bfr"] + [class*="anm_bfr"] {
+        transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-seq-dly) * 3));
+    }
+
+    .anm .anm_seq-itm > *,
+    .anm .anm_hlf-l,
+    .anm .anm_hlf-r,
+    .anm .anm_fl,
+    .anm .anm_seq-lst > li {
+        opacity: 1;
+		transform: none;
+    }
+
+    .anm .anm_bfr-lt,
+    .anm .anm_bfr-rt {
+        transform: scaleX(1);
+    }
+
+    .anm .anm_bfr-tp,
+    .anm .anm_bfr-bt {
+        transform: scaleY(1);
+    }
+    
+    .anm .anm_bfr-lt::before,
+    .anm .anm_bfr-rt::before {
+        transform: scaleX(0);
+       
+    }
+
+    .anm .anm_bfr-tp::before,
+    .anm .anm_bfr-bt::before {
+        transform: scaleY(0);
+    }
+
+	.anm .fnt_t-k::before,
+	.anm .fnt_t-k::after {
+		height: 1.22rem;
+		transform: translateY(-50%) rotate(-45deg);
+		transition: height .5s ease .8s, transform .5s ease 1.3s;
+	}
+
+	.anm .ta_ .fnt_t-k::before,
+	.anm .ta_ .fnt_t-k::after {
+		height: 1.22rem;
+		transform: translateX(-50%) rotate(-45deg);
+		transition: height .5s ease .8s, transform .5s ease 1.3s;
+	}
+
+    .anm [class*="anm_bfr"]::before {
+        transition-delay: calc(var(--anm-trn-sp) + var(--anm-trn-seq-dly));
+    }
+
+    .anm [class*="anm_bfr"] + [class*="anm_bfr"]::before {
+        transition-delay: calc(var(--anm-trn-sp) + (var(--anm-trn-seq-dly) * 2));
+    }
+
+    .anm [class*="anm_bfr"] + [class*="anm_bfr"] + [class*="anm_bfr"]::before {
+        transition-delay: calc(var(--anm-trn-sp) + (var(--anm-trn-seq-dly) * 3));
+    }
+
+    [class*="anm_seq-itm"] > *:first-child {
+		transition-delay: calc(var(--anm-trn-dly) + var(--anm-trn-seq-dly));
+	}
+	
+	[class*="anm_seq-itm"] > *:nth-child(2) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-seq-dly) * 2));
+	}
+	
+	[class*="anm_seq-itm"] > *:nth-child(3) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-seq-dly) * 3));
+	}
+	
+	[class*="anm_seq-itm"] > *:nth-child(4) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-seq-dly) * 4));
+	}
+	
+	[class*="anm_seq-itm"] > *:nth-child(5) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-seq-dly) * 5));
+	}
+
+    .anm_seq-lst > li:first-child {
+		transition-delay: calc(var(--anm-trn-dly) + var(--anm-trn-lst-dly));
+	}
+	
+	.anm_seq-lst > li:nth-child(2) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 2));
+	}
+	
+	.anm_seq-lst > li:nth-child(3) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 3));
+	}
+	
+	.anm_seq-lst > li:nth-child(4) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 4));
+	}
+	
+	.anm_seq-lst > li:nth-child(5) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 5));
+	}
+	
+	.anm_seq-lst > li:nth-child(6) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 6));
+	}
+	
+	.anm_seq-lst > li:nth-child(7) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 7));
+	}
+	
+	.anm_seq-lst > li:nth-child(8) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 8));
+	}
+	
+	.anm_seq-lst > li:nth-child(9) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 9));
+	}
+	
+	.anm_seq-lst > li:nth-child(10) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 10));
+	}
+	
+	.anm_seq-lst > li:nth-child(11) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 11));
+	}
+	
+	.anm_seq-lst > li:nth-child(12) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 12));
+	}
+	
+	.anm_seq-lst > li:nth-child(13) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 13));
+	}
+	
+	.anm_seq-lst > li:nth-child(14) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 14));
+	}
+	
+	.anm_seq-lst > li:nth-child(15) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 15));
+	}
+	
+	.anm_seq-lst > li:nth-child(16) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 16));
+	}
+	
+	.anm_seq-lst > li:nth-child(17) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 17));
+	}
+	
+	.anm_seq-lst > li:nth-child(18) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 18));
+	}
+	
+	.anm_seq-lst > li:nth-child(19) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 19));
+	}
+	
+	.anm_seq-lst > li:nth-child(20) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 20));
+	}
+	
+	.anm_seq-lst > li:nth-child(21) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 21));
+	}
+	
+	.anm_seq-lst > li:nth-child(22) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 22));
+	}
+	
+	.anm_seq-lst > li:nth-child(23) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 23));
+	}
+	
+	.anm_seq-lst > li:nth-child(24) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 24));
+	}
+	
+	.anm_seq-lst > li:nth-child(25) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 25));
+	}
+	
+	.anm_seq-lst > li:nth-child(26) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 26));
+	}
+	
+	.anm_seq-lst > li:nth-child(27) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 27));
+	}
+	
+	.anm_seq-lst > li:nth-child(28) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 28));
+	}
+	
+	.anm_seq-lst > li:nth-child(29) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 29));
+	}
+	
+	.anm_seq-lst > li:nth-child(30) {
+		transition-delay: calc(var(--anm-trn-dly) + (var(--anm-trn-lst-dly) * 30));
+	}
+}

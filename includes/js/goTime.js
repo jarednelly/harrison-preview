@@ -1,0 +1,1 @@
+export const magic = "http://localhost:1337";

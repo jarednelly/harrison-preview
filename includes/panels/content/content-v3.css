@@ -1,0 +1,3 @@
+section.lt-bg.cnt.v3 .cnt-stl > :nth-child(1):is( h1, h2, h3, h4, h5, h6 ) {
+    color: var(--lt-fnt-tc-2);
+}

@@ -1,0 +1,34 @@
+section.lt-bg.cnt.v1 .cnt-stl > :nth-child(2):is( h1, h2, h3, h4, h5, h6 ) {
+    color: var(--lt-fnt-tc-1);
+}
+.cnt.v1 .grd {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - (var(--grd-sp) * .5)));
+    grid-template-areas: 
+        'itm-1 itm-1'
+        'itm-1 itm-1'
+        'itm-2 itm-3'
+        'itm-2 itm-3';
+}
+
+.cnt.v1 .itm-1 {
+    grid-area: itm-1;
+}
+
+.cnt.v1 .itm-2 {
+    grid-area: itm-2;
+}
+
+.cnt.v1 .itm-3 {
+    grid-area: itm-3;
+}
+
+@media screen and (max-width:1279px) {
+    .cnt.v1 .grd {
+        grid-template-areas: 
+        'itm-1 itm-2'
+        'itm-1 itm-2'
+        'itm-3 itm-3'
+        'itm-3 itm-3';
+    }
+}

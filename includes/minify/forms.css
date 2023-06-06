@@ -1,0 +1,237 @@
+/* Form Styles */
+fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+fieldset legend {
+	padding: 0;
+}
+
+fieldset > ul li {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	position: relative;
+	font-size: inherit;
+}
+
+/* Form Styles (flex gas overide) */
+fieldset li.full {
+	width: 100% !important;
+}
+
+/* Form Label Styles */
+fieldset li label {
+	display: block;
+	font-size: 14px;
+	text-align: left;
+	transition: color var(--g-trn-sp) var(--g-trn-tf) 0s;
+}
+
+/* Form Input Styles */
+input:not([type="color"]), 
+textarea, 
+select {
+	border: 0;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	color: inherit;
+	font-size: inherit;
+	font-weight: normal;
+	font-family: inherit;
+	line-height: inherit;
+	text-transform: none;
+	background-color: transparent;
+	line-height: var(--fnt-frm-lh);
+}
+
+select,
+.input-text,
+input[type='search'] {
+	appearance: none;
+}
+
+textarea {
+	resize: none;
+	overflow: auto;
+}
+
+:invalid,
+input:invalid {
+	box-shadow: none;
+}
+
+.inp-mrk,
+.input-text {
+	position: relative;
+}
+
+.inp-mrk .input-text {
+	width: auto;
+}
+
+.input-text  {
+	width: 100%;
+	font-size: 100%;
+	text-align: left;
+	padding: .4rem .5rem .1rem;
+	border-width: var(--frm-bdr-w);
+	border-style: var(--frm-bdr-stl);
+	border-radius: var(--frm-bdr-rds);
+	background-clip: padding-box !important;
+	transition: border-color var(--g-trn-sp) var(--g-trn-tf) 0s;
+}
+
+.upld .input-text  {
+	padding: .6rem .5rem;
+}
+
+li.msg textarea {
+	min-height: 4.5rem;
+}
+
+.sel svg {
+	right: .5rem;
+	position: absolute;
+	pointer-events: none;
+	color: var(--buttons);
+}
+
+.input-text select {
+	padding-right: 1rem;
+}
+
+.lt-bg .input-text select option, 
+.dk-bg .input-text select option {
+	background-color: var(--main-bg);
+}
+
+/* Form Checkbox Styles */
+
+.inp-mrk .input-text {
+	border: 0;
+	padding: 0;
+}
+
+.inp-mrk  input[type=radio],
+.inp-mrk  input[type=checkbox] {
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	-webkit-appearance: none;
+	z-index: 3;
+}
+
+.inp-mrk  label {
+	user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.inp-mrk  label.toggle,
+.inp-mrk  label.replace {
+	flex: 0 0 auto;
+	cursor: pointer;
+}
+
+.inp-mrk  label.replace {
+	margin: 0;
+	width: 1.5em;
+	height: 1.5em;
+	border-width: 1px;
+	position: relative;
+	border-style: solid;
+	transition: border-color var(--g-trn-sp) var(--g-trn-tf) 0s;
+}
+
+.inp-mrk  [type=radio] + label.replace {
+	border-radius: 50%;
+}
+
+.inp-mrk  label.replace:before {
+	content: '';
+	top: 4px;
+	left: 4px;
+	right: 4px;
+	bottom: 4px;
+	opacity: 0;
+	position: absolute;
+	transform: scale(.7);
+	transition: background-color var(--g-trn-sp) var(--g-trn-tf) 0s, transform var(--g-trn-sp) var(--g-trn-tf) 0s, opacity var(--g-trn-sp) var(--g-trn-tf) 0s;
+}
+
+.inp-mrk  [type=radio] + label.replace:before {
+	border-radius: 50%;
+}
+
+.inp-mrk  input:checked + label.replace:before {
+	opacity: 1;
+	transform: none;
+}
+
+.inp-mrk  label.replace + label,
+.inp-mrk  label.toggle + label {
+	margin: 0;
+	line-height: 1.55;
+	position: relative;
+	padding-left: .625em;
+}
+
+/* Form Validation Styles */
+.validation {
+	right: 0;
+	top: 100%;
+	opacity: 0;
+	z-index: 2;
+	display: block;
+	font-size: .8em;
+	padding: .5em 1em;
+	position: absolute;
+	visibility: hidden;
+	white-space: nowrap;
+	transition: opacity var(--g-trn-sp) var(--g-trn-tf) 0s, visibility 0s var(--g-trn-tf) 0s;
+}
+
+.invalid[data-validity="valueMissing"] .validation[data-type="valueMissing"],
+.invalid[data-validity="patternMismatch"] .validation[data-type="typeMismatch"] {
+	opacity: 1;
+	visibility: visible;
+}
+
+.lt-bg .validation,
+.dk-bg .validation {
+	color: var(--main-bg);
+	background: rgba(0,0,0,0.8);
+}
+
+/* Ui-Condidional */
+html:not(.cms-content) .ui-conditional-panel:not(.active) {
+	display: none;
+	visibility: hidden;
+}
+
+/* 1025px Responsive (min-width) */
+@media screen and (min-width:1025px) {
+	
+	.sel svg {
+		bottom: .6rem;
+	}
+	
+}
+
+/* 1024px Responsive */
+@media screen and (max-width:1024px) {
+	
+	.sel svg {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	
+}

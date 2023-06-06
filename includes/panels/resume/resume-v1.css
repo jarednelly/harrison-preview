@@ -1,0 +1,19 @@
+.rsm.v1.lt-bg .fnt_tc-6 {
+    color: #A3A3A3;
+    font-weight: 400;
+}
+
+.rsm.v1 li .cnt-stl {
+    line-height: var(--fnt-cnt-lh);
+}
+
+@media screen and (min-width:1280px) {
+    .rsm.v1 ul[class*='flx'][class*="-at-1280"]:not([class*="-grd"])  li + li {
+        margin-top: calc(var(--sp-vm-clc) * var(--sp-t-mpt-90)) !important;
+    }
+
+    .rsm.v1 ul[class*='flx'][class*="-at-1280"]:not([class*="-grd"]) li:nth-child(2){
+        margin-top: 0 !important;
+    }
+
+}

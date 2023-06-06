@@ -1,0 +1,65 @@
+/* Opacity Out Item (Hover) */
+.hvr_op-itm.itm,
+.hvr_op-itm .itm {
+	opacity: 1;
+	transition: opacity var(--g-trn-sp) var(--g-trn-tf) 0s;
+}
+
+/* Opacity In Item (Hover) */
+.hvr_op-in .itm.abs {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.hvr_op-in .itm {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity var(--g-trn-sp) var(--g-trn-tf) 0s, visibility 0s var(--g-trn-tf) var(--g-trn-sp);
+}
+
+/* Scaling Item (Hover) */
+.hvr_scl-itm .itm,
+.hvr_scl-itm.itm {
+	transform: none;
+	transform-origin: center;
+	transition: transform var(--g-trn-sp) var(--g-trn-tf) 0s;
+}
+
+
+.bg-bx.btn-clr-hvr::before {
+	transition: background-color var(--g-trn-sp) var(--g-trn-tf) 0s;
+}
+
+
+/* Btn Color Hover BG Image */
+.bg-bx.btn-clr-hvr .img-bg {
+	opacity: var(--btn-clr-img-bg-o);
+}
+
+
+@media screen and (min-width:1025px) {
+
+	.hvr_op-in:hover .itm,
+	.hvr_op-in:focus .itm {
+		opacity: 1;
+		visibility: visible;
+		transition: opacity var(--g-trn-sp) var(--g-trn-tf) 0s, visibility 0s var(--g-trn-tf) 0s;
+	} 
+	
+	.hvr_op-itm.itm:hover,
+	.hvr_op-itm.itm:focus,
+	.hvr_op-itm:hover .itm,
+	.hvr_op-itm:focus .itm {
+		opacity: .55;
+	} 
+	
+	.hvr_scl-itm.itm:hover,
+	.hvr_scl-itm.itm:focus, 
+	.hvr_scl-itm:hover .itm,
+	.hvr_scl-itm:focus .itm {
+		transform: scale(1.05,1.05);
+	} 
+}

@@ -1,0 +1,7 @@
+.ctc-sys-grp section {
+    background-color: transparent !important;
+}
+
+.ctc-sys-grp section + section {
+    padding-top: 0 !important;
+}

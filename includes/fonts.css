@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=block');
+
+:root {
+	--fnt-t: 'Roboto', sans-serif;
+	--fnt-m: 'Roboto', sans-serif;
+	
+	--fnt-t-big-ff: var(--fnt-t); /* { friendly: 'Display Font Family' } */
+	--fnt-t-big-ls: 0em; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Display Letter Spacing' } */
+	--fnt-t-big-w: 700; /* { friendly: 'Display Font Weight' } */
+	--fnt-t-big-tt: uppercase; /* { friendly: 'Display Case' } */
+	
+	--fnt-t-sb-ff: var(--fnt-t); /* { friendly: 'Subtitle Font Family' } */
+	--fnt-t-sb-ls: 0em; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Subtitle Letter Spacing' } */
+	--fnt-t-sb-w: 700; /* { friendly: 'Subtitle Font Weight' } */
+	--fnt-t-sb-tt: uppercase; /* { friendly: 'Subtitle Case' } */
+  
+	--fnt-t-co-ff: var(--fnt-t); /* { friendly: 'Callout Font Family' } */
+	--fnt-t-co-ls: 0em; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Callout Letter Spacing' } */
+	--fnt-t-co-w: 700; /* { friendly: 'Callout Font Weight' } */
+	--fnt-t-co-tt: uppercase; /* { friendly: 'Callout Case' } */
+  
+	--fnt-t-k-ff: var(--fnt-t); /* { friendly: 'Header Kicker Font Family' } */
+	--fnt-t-k-ls: .1rem; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Header Kicker Letter Spacing' } */
+	--fnt-t-k-w: 700; /* { friendly: 'Header Kicker Font Weight' } */
+	--fnt-t-k-tt: uppercase; /* { friendly: 'Header Kicker Case' } */
+  
+	--fnt-t-1-ff: var(--fnt-t); /* { friendly: 'Header 1 Font Family' } */
+	--fnt-t-1-ls: 0em; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Header 1 Letter Spacing' } */
+	--fnt-t-1-w: 700; /* { friendly: 'Header 1 Font Weight' } */
+	--fnt-t-1-tt: uppercase; /* { friendly: 'Header 1 Case' } */
+  
+	--fnt-t-2-ff: var(--fnt-m); /* { friendly: 'Header 2 Font Family' } */
+	--fnt-t-2-ls: 0em; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Header 2 Letter Spacing' } */
+	--fnt-t-2-w: 700; /* { friendly: 'Header 2 Font Weight' } */
+	--fnt-t-2-tt: none; /* { friendly: 'Header 2 Case' } */
+  
+	--fnt-t-3-ff: var(--fnt-t); /* { friendly: 'Header 3 Font Family' } */
+	--fnt-t-3-ls: 0em; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Header 3 Letter Spacing' } */
+	--fnt-t-3-w: 700; /* { friendly: 'Header 3 Font Weight' } */
+	--fnt-t-3-tt: none; /* { friendly: 'Header 3 Case' } */
+  
+	--fnt-t-4-ff: var(--fnt-m); /* { friendly: 'Header 4 Font Family' } */
+	--fnt-t-4-ls: 0em; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Header 4 Letter Spacing' } */
+	--fnt-t-4-w: 400; /* { friendly: 'Header 4 Font Weight' } */
+	--fnt-t-4-tt: none; /* { friendly: 'Header 4 Case' } */
+  
+	--fnt-t-5-ff: var(--fnt-m); /* { friendly: 'Header 5 Font Family' } */
+	--fnt-t-5-ls: .1rem; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Header 5 Letter Spacing' } */
+	--fnt-t-5-w: 700; /* { friendly: 'Header 5 Font Weight' } */
+	--fnt-t-5-tt: uppercase; /* { friendly: 'Header 5 Case' } */
+  
+	--fnt-t-6-ff: var(--fnt-m); /* { friendly: 'Header 6 Font Family' } */
+	--fnt-t-6-ls: 0em; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Header 6 Letter Spacing' } */
+	--fnt-t-6-w: 700; /* { friendly: 'Header 6 Font Weight' } */
+	--fnt-t-6-tt: none; /* { friendly: 'Header 6 Case' } */
+	
+	--fnt-nv-lnk-ff: var(--fnt-m); /* { friendly: 'Top Nav Link Font Family' } */
+	--fnt-nv-lnk-ls: 0em; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Top Nav Link Letter Spacing' } */
+	--fnt-nv-lnk-w: 700; /* { friendly: 'Top Nav Link Font Weight' } */
+	--fnt-nv-lnk-tt: none; /* { friendly: 'Top Nav Link Case' } */	
+	--fnt-nv-lnk-fs: normal; /* { friendly: 'Top Nav Link Style' } */
+  
+	--fnt-qte-ff: var(--fnt-m); /* { friendly: 'Quote Font Family' } */
+	--fnt-qte-ls: 0em; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Quote Letter Spacing' } */
+	--fnt-qte-w: 700; /* { friendly: 'Quote Font Weight' } */
+	--fnt-qte-tt: none; /* { friendly: 'Quote Case' } */
+	--fnt-qte-fs: none; /* { friendly: 'Quote Font Style' } */
+	
+	--fnt-atr-ff: var(--fnt-m); /* { friendly: 'Author Font Family' } */
+	--fnt-atr-ls: 0em; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Author Letter Spacing' } */
+	--fnt-atr-w: 700; /* { friendly: 'Author Font Weight' } */
+	--fnt-atr-tt: none; /* { friendly: 'Author Case' } */
+	--fnt-atr-fs: none; /* { friendly: 'Author Font Style' } */
+  
+	--fnt-phn-ff: var(--fnt-t); /* { friendly: 'Phone Font Family' } */
+	--fnt-phn-ls: 0em; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Phone Letter Spacing' } */
+	--fnt-phn-w: 700; /* { friendly: 'Phone Font Weight' } */
+  
+	--btn-v1-ff: var(--fnt-m); /* { friendly: 'Button V1 Font Family' } */
+	--btn-v1-ls: .1rem; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Button V1 Letter Spacing' } */
+	--btn-v1-w: 700; /* { friendly: 'Button V1 Font Weight' } */
+	--btn-v1-tt: uppercase; /* { friendly: 'Button V1 Case' } */
+  
+	--btn-v2-ff: var(--fnt-m); /* { friendly: 'Button V2 Font Family' } */
+	--btn-v2-ls: .1rem; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Button V2 Letter Spacing' } */
+	--btn-v2-w: 700; /* { friendly: 'Button V2 Font Weight' } */
+	--btn-v2-tt: uppercase; /* { friendly: 'Button V2 Case' } */
+  
+	--fnt-frm-ff: var(--fnt-m); /* { friendly: 'Form Label Font Family' } */
+	--fnt-frm-ls: 0em; /* { min: -0.05, max: 0.5, step: 0.01, friendly: 'Form Label Letter Spacing' } */
+	--fnt-frm-w: 400; /* { friendly: 'Form Label Font Weight' } */
+	--fnt-frm-tt: none; /* { friendly: 'Form Label Case' } */
+  }

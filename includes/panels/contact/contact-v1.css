@@ -1,0 +1,14 @@
+.ctc.v1 {
+    --ctc-v1-pd-v-tp: 226;
+	--ctc-v1-pd-v-tp-mbl: 287;
+
+    --ctc-v1-pd-v-tp-clc: calc((var(--ctc-v1-pd-v-tp-mbl) * 1px) + (var(--ctc-v1-pd-v-tp) - var(--ctc-v1-pd-v-tp-mbl)) * ((100vw - 320px) / (1920 - 320)));
+}
+
+@media screen and (max-width:699px) {
+    .ctc.v1.pd_v {
+        padding-top: var(--ctc-v1-pd-v-tp-clc);
+    }
+     
+}
+

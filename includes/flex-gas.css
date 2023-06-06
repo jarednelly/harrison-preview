@@ -1,0 +1,153 @@
+/* Flex Grid & Auto Sizing */
+[class*="flx"][class*="-grd"] {
+	flex-wrap: wrap;
+    flex-direction: column;
+	position: relative;
+    gap: var(--grd-sp);
+}
+
+.f_rw[class*="flx"][class*="-grd"] {
+    flex-direction: row;
+}
+
+[class*="flx"][class*="-grd"] > li {
+	flex: 1 1 auto;
+}
+
+[class*="flx"][class*="-grd"] > li.fit {
+	flex: 0 1 auto;
+}
+
+[class*="flx"][class*="-grd"] > li.half {
+	max-width: calc(var(--half) - (var(--grd-sp) * 0.5));
+}
+
+[class*="flx"][class*="-grd"] > li.third {
+	max-width: calc(var(--third) - (var(--grd-sp) * 0.667));
+}
+
+[class*="flx"][class*="-grd"] > li.fourth {
+	max-width: calc(var(--fourth) - (var(--grd-sp) * 0.75));
+}
+
+[class*="flx"][class*="-grd"] > li.fifth {
+	max-width: calc(var(--fifth) - (var(--grd-sp) * 0.8));
+}
+
+[class*="flx"][class*="-grd"] > li.sixth {
+	max-width: calc(var(--sixth) - (var(--grd-sp) * 0.833));
+}
+
+/* Catch All Size */
+[class*="ato-sz"][class*="flx"] > li {
+	width: var(--seventh);
+}
+
+/* 2 Items */
+[class*="ato-sz"][class*="flx-"][class*="-grd"] > li:nth-last-of-type(2n):first-of-type,
+[class*="ato-sz"][class*="flx-"][class*="-grd"] > li:nth-last-of-type(2n):first-of-type ~ li {
+	width: calc(var(--half) - (var(--grd-sp) * 0.5));
+}
+
+@media screen and (min-width: 700px) {
+
+    [class*="flx-at-700"][class*="-grd"] {
+        flex-direction: row;
+    }
+}
+
+/* 4 Items */
+@media screen and (min-width: 1025px) {
+	
+	[class*="ato-sz"][class*="flx"][class*="-grd"][class*="mx-4"] > li {
+		width: calc(var(--fourth) - (var(--grd-sp) * 0.75));
+	}
+	
+	body [class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(8):first-of-type,
+	body [class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(8):first-of-type ~ li,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-3"]) > li:nth-last-of-type(4n - 2):first-of-type,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-3"]) > li:nth-last-of-type(4n - 2):first-of-type ~ li,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-3"]) > li:nth-last-of-type(4n - 1):first-of-type,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-3"]) > li:nth-last-of-type(4n - 1):first-of-type ~ li,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-3"]) > li:nth-last-of-type(4n):first-of-type,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-3"]) > li:nth-last-of-type(4n):first-of-type ~ li {
+		width: calc(var(--fourth) - (var(--grd-sp) * 0.75));
+	}
+}
+
+/* 3 & 5 Items */
+@media screen and (min-width: 1280px) {
+
+	[class*="flx-at-1280"][class*="-grd"] {
+        flex-direction: row;
+    }
+
+	[class*="ato-sz"][class*="flx"][class*="-grd"][class*="mx-3"] > li {
+		width: calc(var(--third) - (var(--grd-sp) * 0.667));
+	}
+	
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:is([class*="mx-4"], [class*="mx-5"]) > li:nth-last-of-type(6):first-of-type,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:is([class*="mx-4"], [class*="mx-5"]) > li:nth-last-of-type(6):first-of-type ~ li,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"] > li:nth-last-of-type(3n - 1):first-of-type,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"] > li:nth-last-of-type(3n - 1):first-of-type ~ li,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"] > li:nth-last-of-type(3n):first-of-type,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"] > li:nth-last-of-type(3n):first-of-type ~ li {
+		width: calc(var(--third) - (var(--grd-sp) * 0.667));
+	}
+	
+	
+}
+
+/* 6 Items */
+@media screen and (min-width: 1500px) {
+	
+	[class*="ato-sz"][class*="flx"][class*="-grd"][class*="mx-5"] > li {
+		width: calc(var(--fifth) - (var(--grd-sp) * 0.8));
+	}
+	
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(5n - 2):first-of-type,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(5n - 2):first-of-type ~ li,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(5n - 1):first-of-type,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(5n - 1):first-of-type ~ li,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(5n):first-of-type,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(5n):first-of-type ~ li {
+		width: calc(var(--fifth) - (var(--grd-sp) * 0.8));
+	}
+
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-5"]):not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(6n - 2):first-of-type,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-5"]):not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(6n - 2):first-of-type ~ li,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-5"]):not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(6n - 1):first-of-type,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-5"]):not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(6n - 1):first-of-type ~ li,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-5"]):not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(6n):first-of-type,
+	[class*="ato-sz"][class*="flx-"][class*="-grd"]:not([class*="mx-5"]):not([class*="mx-4"]):not([class*="mx-3"]) > li:nth-last-of-type(6n):first-of-type ~ li {
+		width: calc(var(--sixth) - (var(--grd-sp) * 0.833));
+	}
+
+}
+
+/* 1499px Responsive */
+@media screen and (max-width: 1499px) {
+
+}
+
+/* 1279px Responsive */
+@media screen and (max-width: 1279px) {
+
+	[class*="flx"][class*="-at-1280"][class*="-grd"] > li:not(#_) {
+		width: var(--full) !important;
+	}
+	
+	[class*="ato-sz"][class*="flx"][class*="-grd"]:not(#_) > li:not(#_) {
+		width: calc(var(--half) - (var(--grd-sp) * 0.5));
+	}
+
+}
+
+/* 699px Responsive */
+@media screen and (max-width: 699px) {
+
+	[class*="flx"][class*="-at-700"][class*="-grd"] > li:not(#_) {
+		width: var(--full) !important;
+	}
+
+}
