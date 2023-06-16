@@ -61,7 +61,7 @@
     pointer-events: none;
 }
 
-.lb-con button[data-action] {
+.lb-con button[data-action="close"] {
     position: absolute;
     top: 1rem;
     right: 1rem;
