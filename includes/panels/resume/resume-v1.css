@@ -17,3 +17,9 @@
     }
 
 }
+
+@media screen and (max-width:1279px) {
+    .rsm.v1 li:first-child {
+        margin-top: 0;
+    }
+}

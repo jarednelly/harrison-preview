@@ -3,6 +3,18 @@
 	--ctc-v1-pd-v-tp-mbl: 287;
 
     --ctc-v1-pd-v-tp-clc: calc((var(--ctc-v1-pd-v-tp-mbl) * 1px) + (var(--ctc-v1-pd-v-tp) - var(--ctc-v1-pd-v-tp-mbl)) * ((100vw - 320px) / (1920 - 320)));
+
+    --ctc-v1-pd-dsk: 132;
+    --ctc-v1-pd-dsk-mbl: 180;
+
+    --ctc-v1-pd-dsk-clc: calc((var(--ctc-v1-pd-dsk-mbl) * 1px) + (var(--ctc-v1-pd-dsk) - var(--ctc-v1-pd-dsk-mbl)) * ((100vw - 320px) / (1920 - 320)));
+}
+
+@media screen and (min-width:1280px) {
+    .ctc.v1 .pd_dsk {
+        padding-top: var(--ctc-v1-pd-dsk-clc);
+        padding-bottom: var(--ctc-v1-pd-dsk-clc);
+    }
 }
 
 @media screen and (max-width:699px) {

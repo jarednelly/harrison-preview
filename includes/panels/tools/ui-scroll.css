@@ -1,0 +1,42 @@
+:root {
+    --ui-scroll-brd-rds: 12px; /* { min: 0, max: 20, step: 1, friendly: 'Scroll Border Radius' } */
+    --ui-scroll-w: 0.278rem; /* { min: .1, max: 1, step: 0.001, friendly: 'Scroll Bar Width' } */
+}
+.ui-scroll {
+    overflow: auto;
+}
+.ui-scroll::-webkit-scrollbar {
+    width: var(--ui-scroll-w) !important;
+    height: calc(var(--ui-scroll-w) * 2) !important;
+}
+.ui-scroll::-webkit-scrollbar-thumb {
+    border-radius: var(--ui-scroll-brd-rds);
+    border: 0;
+}
+.ui-scroll::-webkit-scrollbar-track {
+    border-radius: var(--ui-scroll-brd-rds);
+    box-shadow: none;
+}
+
+/* Light Theme Scroll Bar Styles */
+.lt-bg .ui-scroll::-webkit-scrollbar-thumb,
+.lt-bg.ui-scroll::-webkit-scrollbar-thumb,
+.dk-bg .bg-bx.ulk-bg .ui-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+}
+.lt-bg .ui-scroll::-webkit-scrollbar-track,
+.lt-bg.ui-scroll::-webkit-scrollbar-track,
+.dk-bg .bg-bx.ulk-bg .ui-scroll::-webkit-scrollbar-track {
+    background-color: var(--bdr-clr-dk);
+}
+/* Dark Theme Scroll Bar Styles */
+.dk-bg .ui-scroll::-webkit-scrollbar-thumb,
+.dk-bg.ui-scroll::-webkit-scrollbar-thumb,
+.lt-bg .bg-bx.ulk-bg .ui-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--buttons);
+}
+.dk-bg .ui-scroll::-webkit-scrollbar-track,
+.dk-bg.ui-scroll::-webkit-scrollbar-track,
+.lt-bg .bg-bx.ulk-bg .ui-scroll::-webkit-scrollbar-track{
+    background-color: var(--bdr-clr-lt);
+}

@@ -285,6 +285,11 @@ section.dk-bg .bg-bx.ulk-bg .cnt-stl > :nth-child(2):is( h1, h2, h3, h4, h5, h6 
 	color: var(--lt-fnt-tc-6);
 }
 
+.lt-bg :where(.cnt-stl .fnt_tc-k), 
+.dk-bg .bg-bx.ulk-bg :where(.fnt_tc-k) {
+	color: var(--lt-fnt-tc-k);
+}
+
 h2 :where(em, i, strong),
 h1 :where(em, i, strong),
 h3 :where(em, i, strong),

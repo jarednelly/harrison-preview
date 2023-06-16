@@ -44,24 +44,24 @@
 .lb-con .lb-cnt {
     position: relative;
     height: 80vh;
-    overflow: hidden;
+    max-height: 80vh;
     border: 5px solid var(--inner-bg);
     background-color: var(--main-bg-alt);
+    overflow-x: hidden;
 }
 
 .lb-con .lb-cnt img {
-    position: absolute;
-    top: 0;
+    position: relative;
     left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    width: auto;
+    height: auto;
+    min-width: calc(100% + 2px);
+    min-height: calc(100% + 2px);
     pointer-events: none;
-    background-position: 50% 0%;
-    background-size: 100% auto;
-    transition: background-position 15s linear 0s;
 }
 
-.lb-con button {
+.lb-con button[data-action] {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -73,8 +73,17 @@
     line-height: 1;
 }
 
-.lb-con .lb-cnt:hover img,
-.lb-con .lb-cnt:focus img {
-    background-position: 50% 100%;
-    transition: background-position 15s linear 0s;
+.lb-con .icn {
+    font-size: 2rem;
+}
+
+@media screen and (max-width:699px) {
+    .lb-con .lb-box {
+        max-width: 80vw;
+    }
+
+    .lb-con .lb-cnt {
+        max-height: 65vh;
+        height: 65vh;
+    }
 }

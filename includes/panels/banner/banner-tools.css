@@ -7,7 +7,7 @@
 
 @media screen and (max-width:699px) {
     [class*="bnr"].pd_v:not(.full-mbl) {
-        padding-top: var(--bnr-pd-v-tp-clc);
+        padding-top: var(--bnr-pd-v-tp-clc) !important;
     }
      
 }

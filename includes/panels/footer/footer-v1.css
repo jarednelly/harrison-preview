@@ -2,12 +2,20 @@
     --ftr-v1-nv-sp: 50; /* { min: 50, max: 500, step: 10, friendly: 'Top Nav Link Spacing Desktop', group: 'Calculations' } */
 	--ftr-v1-nv-sp-lpt: 20; /* { min: 10, max: 300, step: 1, friendly: 'Top Nav Link Spacing Laptop', group: 'Calculations' } */
 	--ftr-v1-nv-sp-clc: calc((var(--ftr-v1-nv-sp-lpt) * 1px) + (var(--ftr-v1-nv-sp) - var(--ftr-v1-nv-sp-lpt)) * ((100vw - 1280px) / (1920 - 1280))); /* { readonly: true } */
+
+    --ftr-lg-mx-wd: 405; /* { min: 50, max: 500, step: 10, friendly: 'Logo Max Width Desktop', group: 'Calculations' } */
+	--ftr-lg-mx-wd-mbl: 256; /* { min: 10, max: 300, step: 1, friendly: 'Logo Max Width Mobile', group: 'Calculations' } */
+	--ftr-lg-mx-wd-clc: calc((var(--ftr-lg-mx-wd-mbl) * 1px) + (var(--ftr-lg-mx-wd) - var(--ftr-lg-mx-wd-mbl)) * ((100vw - 320px) / (1920 - 320))); /* { readonly: true } */
 }
 
 
 .ftr.v1 ul > li {
     margin-right: var(--ftr-v1-nv-sp-clc);
 }
+
+.ftr .ftr-lg {
+	max-width: var(--ftr-lg-mx-wd-clc);
+} 
 
 @media screen and (min-width:1280px) {
     .ftr.v1 .ftr-bx {

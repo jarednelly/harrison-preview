@@ -1,7 +1,7 @@
 :root:is(html) {
 	--lt-fnt-tc-big: var(--text); /* { friendly: 'Light Theme Big Title Color', group: 'Colors' } */
 	--lt-fnt-tc-co: var(--text); /* { friendly: 'Light Theme Callout Title Color', group: 'Colors' } */
-	--lt-fnt-tc-k: var(--buttons); /* { friendly: 'Light Theme Title Kicker Color', group: 'Colors' } */
+	--lt-fnt-tc-k: var(--primary); /* { friendly: 'Light Theme Title Kicker Color', group: 'Colors' } */
 	--lt-fnt-itm-k: var(--primary); /* { friendly: 'Light Theme Item Kicker Color', group: 'Colors' } */
 	
 	--lt-fnt-tc-1: var(--text); /* { friendly: 'Light Theme Title 1 Color', group: 'Colors' } */
@@ -52,7 +52,7 @@
     --bdr-tr-rds: 0; /* { min: 0,  max: 1, step: 0.25, friendly: 'Border Radius - Top Right Corner', group: 'Borders' } */
     
     --bg-bx-o: 1;  /* { min: .2, max: 1, step: 0.05, friendly: 'Opacity - Inner Theme Boxes (On BG Images)', group: 'Calculations' } */
-	--img-bg-o: 1; 	/* { min: .2, max: 1, step: 0.05, friendly: 'Opacity - Background Imagery', group: 'Calculations' } */
+	--img-bg-o: .75; 	/* { min: .2, max: 1, step: 0.05, friendly: 'Opacity - Background Imagery', group: 'Calculations' } */
 	--vid-bg-o: .3; /* { min: .2, max: 1, step: 0.05, friendly: 'Opacity - Background Videos', group: 'Calculations' } */
 	
 	--btn-clr-img-bg-o: 0.3;  /* { min: .1, max: 1, step: 0.05, friendly: 'Opacity - Btn Color Hover Item BG Image', group: 'Other' } */
@@ -89,7 +89,7 @@
 	
 	--mn-t: 78rem; /* { min: 15, max: 100, friendly: 'Main Thin Value', group: 'Other' } */
 	--mn-w: 89rem; /* { min: 15, max: 100, friendly: 'Main Wide Value', group: 'Other' } */
-	--mn-f: 22.467rem; /* { min: 15, max: 100, friendly: 'Main Full Value', group: 'Other' } */
+	--mn-f: 23.467rem; /* { min: 15, max: 100, friendly: 'Main Full Value', group: 'Other' } */
 	
 	--mn_min: 70vw; /* { readonly: true } */
 	--mn_max: 90vw; /* { readonly: true } */
@@ -179,7 +179,7 @@
 .loader .icn-cnt {
 	position: relative;	
 	overflow: hidden;
-	height: 40px;
+	height: 2.35rem;
 }
 
 .loader .icn-cnt.v1 {

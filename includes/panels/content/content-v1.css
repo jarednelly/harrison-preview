@@ -1,6 +1,10 @@
 section.lt-bg.cnt.v1 .cnt-stl > :nth-child(2):is( h1, h2, h3, h4, h5, h6 ) {
     color: var(--lt-fnt-tc-1);
 }
+
+.cnt.v1 h4 strong {
+    color: var(--lt-fnt-tc-4);
+}
 .cnt.v1 .grd {
     display: grid;
     grid-template-columns: repeat(2, calc(50% - (var(--grd-sp) * .5)));

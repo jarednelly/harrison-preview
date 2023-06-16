@@ -107,13 +107,13 @@ if ( !window.USC ) { window.USC = {}; }
 		// Store the event listener functions to make them easy to remove for ADA.
 		this.handleClick = this.handleClick.bind( this );
 	    this.handleKeydown = this.handleKeydown.bind( this );
-		this.handleFocusIn = this.handleFocusIn.bind( this );
+		this.handleFocusin = this.handleFocusin.bind( this );
 		this.handleResize = this.handleResize.bind( this );
 
 		// Bind our events.
 		this.els.scroller.addEventListener( 'click', this.handleClick );
 		this.els.scroller.addEventListener( 'keydown', this.handleKeydown );
-		this.els.scroller.addEventListener( 'focusin', this.handleFocusIn );
+		this.els.scroller.addEventListener( 'focusin', this.handleFocusin );
 		window.addEventListener( 'resize', this.handleResize );
 
 		// Set up swipe events if the device has touch.
@@ -595,7 +595,7 @@ if ( !window.USC ) { window.USC = {}; }
 			// Remove the event listeners and delete the instance of the scrolling list.  
 			this.els.scroller.removeEventListener( 'click', this.handleClick );
 			this.els.scroller.removeEventListener( 'keydown', this.handleKeydown );
-			this.els.scroller.removeEventListener( 'focusin', this.handleFocusIn );
+			this.els.scroller.removeEventListener( 'focusin', this.handleFocusin );
 			window.removeEventListener( 'resize', this.handleResize );
 			delete this.element.$scrollingList;
 
@@ -607,7 +607,7 @@ if ( !window.USC ) { window.USC = {}; }
 	 * 
 	 * @param {FocusEvent} e 
 	 */
-	handleFocusIn = function ( e ) {
+	handleFocusin = function ( e ) {
 		// Check if we gained focus on a scrolling item.
 		var index = this.els.items.indexOf( e.target );
 		if ( index === -1 ) {

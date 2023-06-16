@@ -35,7 +35,7 @@
     --fnt-t-3-lh: 1.4; /* { min: .8, max: 2.2, step: 0.05, type: 'range', friendly: 'Header 3 Line Height' } */
     --fnt-t-3-s-mtp: 1; /* { readonly: true } */
   
-    --fnt-t-4-s: 1rem; /* { friendly: 'Header 4 Font Size' } */
+    --fnt-t-4-s: 1.06rem; /* { friendly: 'Header 4 Font Size' } */
     --fnt-t-4-lh: 1.75; /* { min: .8, max: 2.2, step: 0.05, type: 'range', friendly: 'Header 4 Line Height' } */
     --fnt-t-4-s-mtp: 1; /* { readonly: true } */
   
