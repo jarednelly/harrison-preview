@@ -39,7 +39,7 @@
 }
 
 @media screen and (max-width:699px) {
-    .prt.v1.pd_v {
+    .prt.v1.pd_v-70 {
         padding-top: var(--prt-v1-pd-v-tp-clc);
     }
     
