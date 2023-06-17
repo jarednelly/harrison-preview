@@ -76,5 +76,6 @@
         top: calc((var(--grd-sp-lrg) / 2) * -1);
         width: 100%;
         height: 1px;
+        left: 0;
     }
 }
